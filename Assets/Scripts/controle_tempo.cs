@@ -33,7 +33,7 @@ public class controle_tempo : MonoBehaviour
 
             minutos_atuais = Mathf.FloorToInt(tempo_atual / 60f);
             segundos_atuais = Mathf.FloorToInt(tempo_atual % 60f);
-            txt_tempo.text = string.Format("{0:00}:{1:00}", minutos_atuais, segundos_atuais);            
+            txt_tempo.text = string.Format("TEMPO\n{0:00}:{1:00}", minutos_atuais, segundos_atuais);            
         } else
         {
             txt_tempo.text = "00:00";
