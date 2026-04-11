@@ -5,6 +5,7 @@ public class inimigo_movimento : MonoBehaviour
 {
     public Transform jogador;
     private NavMeshAgent inimigo;
+
     public float tempo_parado = 1.5f;
     private float timer = 0f;
 

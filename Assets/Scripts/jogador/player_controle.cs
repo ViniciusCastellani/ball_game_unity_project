@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class player_controle : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float horizontal;
-    public float vertical;
+    private Rigidbody rb;
+    
+    private float horizontal, vertical;
     public float velocidade = 0;
-    public GameObject modeloSonic;
     public float velocidadeRotacaoBola = 2500f;
 
+    public GameObject modeloSonic;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,15 +38,6 @@ public class player_controle : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         Vector3 direcao = new Vector3(horizontal, 0, vertical);
-
-        // Normaliza pra diagonal não ser mais rápida
-        if (direcao.magnitude > 1f)
-            direcao.Normalize();
-
-        // Adapta à inclinação da rampa
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 2f))
-            direcao = Vector3.ProjectOnPlane(direcao, hit.normal).normalized * direcao.magnitude;
-
         rb.AddForce(direcao * velocidade);
     }
 }

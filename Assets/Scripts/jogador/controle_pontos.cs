@@ -3,19 +3,17 @@ using TMPro;
 
 public class controle_pontos : MonoBehaviour{
     int pontos;
-    public int total_pontos;
-    public int pontos_secao1;
+    public int total_pontos, pontos_secao_01;
+    public TextMeshProUGUI pontos_txt;
 
-    public TextMeshProUGUI txt_pontos;
-    public GameObject txt_vitoria;
-    public GameObject parede_invisivel;
+    public GameObject vitoria_img, parede_invisivel;
 
     void Start()
     {
         pontos = 0;
         GameObject[] coletaveis = GameObject.FindGameObjectsWithTag("coletavel");
         total_pontos = coletaveis.Length;
-        txt_vitoria.SetActive(false);
+        vitoria_img.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider objetoColidido)
@@ -24,9 +22,9 @@ public class controle_pontos : MonoBehaviour{
         {
             objetoColidido.gameObject.SetActive(false);
             pontos++;
-            txt_pontos.text = "pontos: " + pontos.ToString();
+            pontos_txt.text = "pontos: " + pontos.ToString();
 
-            if (pontos >= pontos_secao1 && parede_invisivel != null)
+            if (pontos >= pontos_secao_01 && parede_invisivel != null)
                 parede_invisivel.SetActive(false);
 
             if (pontos >= total_pontos)
@@ -36,7 +34,7 @@ public class controle_pontos : MonoBehaviour{
 
     void vitoria()
     {
-        txt_vitoria.SetActive(true);
+        vitoria_img.SetActive(true);
         Time.timeScale = 0.0f;
     }
 }

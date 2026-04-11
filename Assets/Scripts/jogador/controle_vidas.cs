@@ -5,7 +5,9 @@ public class controle_vidas : MonoBehaviour
     public int total_vidas = 3;
     private int vidas_atuais;
     public GameObject[] coracoes;
-    public GameObject txt_derrota;
+
+    public GameObject derrota_img;
+    
     public float tempo_invencivel = 1.5f;
     private float timer_invencivel = 0f;
     private bool invencivel = false;
@@ -58,7 +60,7 @@ public class controle_vidas : MonoBehaviour
 
     void derrota()
     {
-        txt_derrota.SetActive(true);
+        derrota_img.SetActive(true);
         Time.timeScale = 0.0f;
     }
 }

@@ -5,7 +5,6 @@ public class camera_control : MonoBehaviour
     public GameObject jogador;
     public Vector3 distancia; 
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

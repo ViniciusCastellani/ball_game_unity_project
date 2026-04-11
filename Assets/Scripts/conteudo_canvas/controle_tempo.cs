@@ -7,11 +7,10 @@ public class controle_tempo : MonoBehaviour
     public float tempo_alerta = 60f;
     private float tempo_atual;
 
-    private int segundos_atuais;
-    private int minutos_atuais;
+    private int segundos_atuais, minutos_atuais;
 
-    public TextMeshProUGUI txt_tempo;
-    public GameObject txt_derrota;
+    public TextMeshProUGUI tempo_txt;
+    public GameObject derrota_img;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,22 +27,22 @@ public class controle_tempo : MonoBehaviour
 
             if (tempo_atual <= tempo_alerta)
             {
-                txt_tempo.color = Color.red;
+                tempo_txt.color = Color.red;
             }
 
             minutos_atuais = Mathf.FloorToInt(tempo_atual / 60f);
             segundos_atuais = Mathf.FloorToInt(tempo_atual % 60f);
-            txt_tempo.text = string.Format("TEMPO\n{0:00}:{1:00}", minutos_atuais, segundos_atuais);            
+            tempo_txt.text = string.Format("TEMPO\n{0:00}:{1:00}", minutos_atuais, segundos_atuais);            
         } else
         {
-            txt_tempo.text = "00:00";
+            tempo_txt.text = "00:00";
             derrota();
         }
     }
 
     void derrota()
     {
-        txt_derrota.SetActive(true);
+        derrota_img.SetActive(true);
         Time.timeScale = 0.0f;
     }
 }
