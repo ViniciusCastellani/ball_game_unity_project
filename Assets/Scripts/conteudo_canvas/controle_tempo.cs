@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class controle_tempo : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class controle_tempo : MonoBehaviour
     public TextMeshProUGUI tempo_txt;
     public GameObject derrota_img;
 
+    private bool perdeu = false;
+    private float tempo_derrota = 3f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +25,18 @@ public class controle_tempo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (perdeu)
+        {
+            tempo_derrota -= Time.unscaledDeltaTime;
+
+            if (tempo_derrota <= 0f)
+            {
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("main_menu");
+            }
+            return;
+        }
+
         if (tempo_atual > 0f)
         {
             tempo_atual -= Time.deltaTime;
@@ -42,7 +58,11 @@ public class controle_tempo : MonoBehaviour
 
     void derrota()
     {
+        if (perdeu) 
+            return;
+     
         derrota_img.SetActive(true);
         Time.timeScale = 0.0f;
+        perdeu = true;
     }
 }

@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class controle_pontos : MonoBehaviour{
     int pontos;
@@ -8,12 +9,28 @@ public class controle_pontos : MonoBehaviour{
 
     public GameObject vitoria_img, parede_invisivel;
 
+    private bool venceu = false;
+    private float tempo_vitoria = 3f;
+
     void Start()
     {
         pontos = 0;
         GameObject[] coletaveis = GameObject.FindGameObjectsWithTag("coletavel");
         total_pontos = coletaveis.Length;
         vitoria_img.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (venceu)
+        {
+            tempo_vitoria -= Time.unscaledDeltaTime;
+            if (tempo_vitoria <= 0f)
+            {
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("main_menu");
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider objetoColidido)
@@ -34,6 +51,10 @@ public class controle_pontos : MonoBehaviour{
 
     void vitoria()
     {
+        if (venceu)
+            return; 
+
+        venceu = true;
         vitoria_img.SetActive(true);
         Time.timeScale = 0.0f;
     }
