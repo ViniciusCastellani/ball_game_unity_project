@@ -16,7 +16,7 @@ public class contador_fpss : MonoBehaviour
         // Calcula o FPS (1 dividido pelo tempo entre frames)
         float fps = 1f / Time.deltaTime;
         // Atualiza o texto_fps com 2 casas decimais
-        texto_fps.text = fps.ToString("00") + " FPS";
+        texto_fps.text = "FPS: " + fps.ToString("00");
         // Define cor baseada no FPS
         if (fps < 10)
         {
