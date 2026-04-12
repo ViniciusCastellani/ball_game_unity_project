@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::controle_pontos
   total_pontos: 16
-  pontos_secao_01: 15
+  pontos_secao_01: 0
   pontos_txt: {fileID: 349184906}
   vitoria_img: {fileID: 1126619384}
   parede_invisivel: {fileID: 974516330}
@@ -1976,13 +1976,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544293937}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0016027094, y: 0.04988977, z: 0.032068644, w: 0.9982385}
-  m_LocalPosition: {x: -30.3, y: 10.549999, z: -294.6694}
+  m_LocalRotation: {x: 0, y: 0.049913123, z: 0, w: 0.9987536}
+  m_LocalPosition: {x: -30.3, y: 10.549999, z: -294.53}
   m_LocalScale: {x: 1.1270899, y: 1, z: 7.6932983}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1344961533}
-  m_LocalEulerAnglesHint: {x: 0, y: 5.722, z: 3.68}
+  m_LocalEulerAnglesHint: {x: 0, y: 5.722, z: 0}
 --- !u!64 &544293939
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4756,13 +4756,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659657514}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19505447, y: 0.049491446, z: -0.007115935, w: 0.9795171}
-  m_LocalPosition: {x: -22.7, y: 23.42, z: -222.06}
+  m_LocalRotation: {x: -0.187002, y: 0.0413173, z: 0.00831635, w: 0.9814551}
+  m_LocalPosition: {x: -23.7, y: 24.7, z: -220.8}
   m_LocalScale: {x: 1.1270899, y: 1, z: 7.6932983}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1344961533}
-  m_LocalEulerAnglesHint: {x: -22.421, y: 6.194, z: -2.061}
+  m_LocalEulerAnglesHint: {x: -21.577, y: 4.811, z: 0.054}
 --- !u!64 &1659657516
 MeshCollider:
   m_ObjectHideFlags: 0
