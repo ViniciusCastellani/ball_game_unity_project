@@ -16,7 +16,6 @@ public class controle_tempo : MonoBehaviour
     private bool perdeu = false;
     private float tempo_derrota = 3f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         tempo_atual = tempo_total;   

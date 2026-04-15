@@ -9,6 +9,9 @@ public class controle_pontos : MonoBehaviour{
 
     public GameObject vitoria_img, parede_invisivel;
 
+    public AudioClip som_vitoria;
+    private AudioSource audioSource;
+
     private bool venceu = false;
     private float tempo_vitoria = 3f;
 
@@ -16,6 +19,7 @@ public class controle_pontos : MonoBehaviour{
     {
         pontos = 0;
         GameObject[] coletaveis = GameObject.FindGameObjectsWithTag("coletavel");
+        audioSource = GetComponent<AudioSource>();
         total_pontos = coletaveis.Length;
         vitoria_img.SetActive(false);
     }
@@ -52,10 +56,17 @@ public class controle_pontos : MonoBehaviour{
     void vitoria()
     {
         if (venceu)
-            return; 
+            return;
 
         venceu = true;
         vitoria_img.SetActive(true);
+
+        if (som_vitoria != null && audioSource != null)
+        {
+            AudioListener.pause = false;
+            audioSource.PlayOneShot(som_vitoria);
+        }
+        
         Time.timeScale = 0.0f;
     }
 }
