@@ -11,7 +11,5 @@ public class menu_principal : MonoBehaviour
     public void SairJogo()
     {
         Application.Quit();
-        // Só funciona em build — no Editor usa:
-        // UnityEditor.EditorApplication.isPlaying = false;
     }
 }
