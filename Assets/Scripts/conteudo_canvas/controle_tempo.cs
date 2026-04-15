@@ -50,7 +50,7 @@ public class controle_tempo : MonoBehaviour
             tempo_txt.text = string.Format("TEMPO\n{0:00}:{1:00}", minutos_atuais, segundos_atuais);            
         } else
         {
-            tempo_txt.text = "00:00";
+            tempo_txt.text = "TEMPO\n00:00";
             derrota();
         }
     }
